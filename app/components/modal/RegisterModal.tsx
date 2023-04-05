@@ -11,9 +11,11 @@ import { toast } from 'react-hot-toast'
 import { Button } from '../Button'
 import {FcGoogle} from 'react-icons/fc'
 import { signIn } from 'next-auth/react'
+import useLogin from '@/app/hooks/LoginHook'
 
 export const RegisterModal = () => {
     const registerModal = useRegister();
+    const loginModal = useLogin();
     const [isLoading, setIsLoading] = useState(false);
 
     const { register, handleSubmit, formState:{errors} } = useForm<FieldValues>({
@@ -39,6 +41,11 @@ export const RegisterModal = () => {
         })
     }
 
+    const toggle = () =>{
+        registerModal.onClose();
+        loginModal.onOpen();
+    }
+
     const footer = (
         <>
         <div>
@@ -52,7 +59,7 @@ export const RegisterModal = () => {
         <div className='flex flex-row justify-center gap-3 items-center'>
             <p className='text-gray-500'>Already have an account</p>
             <p className='font-bold'>.</p>
-            <p className='font-medium underline'>Log in</p>
+            <p onClick={toggle} className='font-medium underline cursor-pointer'>Log in</p>
         </div>
         </>
     )

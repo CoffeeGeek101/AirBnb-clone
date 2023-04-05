@@ -13,7 +13,7 @@ interface ModalProps{
     footer ?: React.ReactElement,
     actionLabel : string,
     disabled ?: boolean,
-    secondaryActionLabel ?: boolean, 
+    secondaryActionLabel ?: string, 
     secondaryAction ?: ()=>void
 }
 
@@ -67,7 +67,7 @@ export const Modals : React.FC<ModalProps> = ({
 
   return (
     <div className='w-full h-full fixed z-50 top-0 left-0 bg-neutral-700/70 flex justify-center items-end md:items-center lg:items-center'>
-        <div className='p-5 relative w-full md:w-2/4 lg:w-3/6 bg-white h-[80%] md:h-auto lg:h-auto rounded-2xl'>
+        <div className='relative w-full md:w-2/4 lg:w-3/6 bg-white h-[80%] md:h-auto lg:h-auto rounded-2xl'>
             
             <div className='flex flex-col h-full'>
 

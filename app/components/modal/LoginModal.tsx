@@ -51,6 +51,11 @@ export const LoginModal = () => {
         });
     }
 
+    const toggle = () =>{
+        loginModal.onClose();
+        registerModal.onOpen();
+    }
+
     const footer = (
         <>
         <div>
@@ -64,7 +69,7 @@ export const LoginModal = () => {
         <div className='flex flex-row justify-center gap-3 items-center'>
             <p className='text-gray-500'>Don't have an account ?</p>
             <p className='font-bold'>.</p>
-            <p className='font-medium underline hover:cursor-pointer hover:font-semibold'>Sign in</p>
+            <p onClick={toggle} className='font-medium underline hover:cursor-pointer hover:font-semibold'>Sign in</p>
         </div>
         </>
     )
