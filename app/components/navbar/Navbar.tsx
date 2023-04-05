@@ -8,8 +8,14 @@ import MdLogo from './MdLogo'
 import LgLogo from './LgLogo'
 import Search from './Search'
 import { UserMenu } from './UserMenu'
+import { SafeUser } from '@/app/types/SafeType'
 
-export const Navbar = () => {
+interface NavbarProps{
+  currentUser?: SafeUser | null 
+}
+
+export const Navbar : React.FC<NavbarProps> = ({currentUser}) => {
+  console.log(currentUser)
   return (
     <div className='w-screen fixed bg-white md:border-b-[1px] md:border-slate-200'>
         <Container>
@@ -19,7 +25,7 @@ export const Navbar = () => {
                         <LgLogo/>
                     </div>
                     <Search/>   
-                <UserMenu/>
+                <UserMenu currentUser={currentUser}/>
             </div>
         </Container>
     </div>
