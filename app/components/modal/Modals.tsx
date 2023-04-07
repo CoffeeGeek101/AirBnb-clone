@@ -9,6 +9,7 @@ interface ModalProps{
     onClose : ()=>void,
     onSubmit : ()=>void,
     title ?: string,
+    header ?: React.ReactElement,
     body ?: React.ReactElement,
     footer ?: React.ReactElement,
     actionLabel : string,
@@ -22,6 +23,7 @@ export const Modals : React.FC<ModalProps> = ({
     onClose,
     onSubmit,
     title,
+    header,
     body,
     footer,
     actionLabel,
@@ -69,16 +71,20 @@ export const Modals : React.FC<ModalProps> = ({
     <div className='w-full h-full fixed z-50 top-0 left-0 bg-neutral-700/70 flex justify-center items-end md:items-center lg:items-center'>
         <div className='relative w-full md:w-2/4 lg:w-3/6 bg-white h-[80%] md:h-auto lg:h-auto rounded-2xl'>
             
-            <div className='flex flex-col h-full'>
+            <div className='flex flex-col h-full justify-start gap-2'>
 
                 {/* title */}
-                <div className='border-b-[1px]'>
-                    <div className='px-6 py-2 flex items-center justify-start'>
-                    <RxCross2 onClick={handleClose} className='text-4xl hover:bg-slate-100 rounded-full cursor-pointer p-2'/>
-                    <div className='w-full h-auto'>
-                    <p className='font-semibold mr-4 text-center'>{title}</p>
+                <div className='border-b-[1px] py-2'>
+                    <div className='px-6 flex items-center justify-start'>
+                        <RxCross2 onClick={handleClose} className='text-4xl hover:bg-slate-100 rounded-full cursor-pointer p-2'/>
+                        <div className='w-full h-auto'>
+                            <p className='font-semibold mr-4 text-center'>{title}</p>
+                        </div>
                     </div>
-                    </div>
+                </div>
+
+                <div className='py-3 px-5'>
+                    {header}
                 </div>
 
                 {/* body */}
@@ -90,12 +96,11 @@ export const Modals : React.FC<ModalProps> = ({
                     <div className='flex flex-row gap-2 '>
                         {
                             secondaryActionLabel && (
-                                <Button label='back' onClick={()=>{}} outlined/>
+                                <Button label='back' onClick={handleSecondaryAction} outlined/>
                             )
                         }
                         <Button label={actionLabel} onClick={handleSubmit}/>
                     </div>
-                    <hr/>
                     {footer}
                 </div>
             </div>

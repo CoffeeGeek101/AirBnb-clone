@@ -1,5 +1,6 @@
 import React from 'react'
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form'
+import {BsCurrencyDollar} from 'react-icons/bs'
 
 interface InputProps {
     id : string,
@@ -62,7 +63,10 @@ export const Input : React.FC<InputProps> = ({
         peer-focus:scale-75
         peer-focus:-translate-y-5
         ${errors[id] ? 'text-rose-500' : 'text-zinc-400'}`}
-        >{label}</label>
+        >
+          { formatPrice && <BsCurrencyDollar className='absolute bottom-[-23px] left-[-25px] text-slate-900' size={20}/>}
+          {label}
+        </label>
     </div>
   )
 }

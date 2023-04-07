@@ -18,7 +18,7 @@ interface NavbarProps{
 export const Navbar : React.FC<NavbarProps> = ({currentUser}) => {
   console.log(currentUser)
   return (
-    <div className='w-screen fixed bg-white'>
+    <div className='w-screen fixed bg-white z-10'>
     <div className='md:border-b-[1px] md:border-slate-200'>
         <Container>
             <div className='flex justify-between items-center gap-5 md:relative lg:flex md:justify-between'>

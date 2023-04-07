@@ -110,7 +110,7 @@ const Categories = () => {
   }
 
   return (
-    <div className='px-4 pt-2 md:p-8 h-auto border-b-[1px] shadow-md shadow-gray-400/10 md:border-none md:shadow-none'>
+    <div className='px-4 pt-2 md:py-2 h-auto border-b-[1px] shadow-md shadow-gray-400/10 md:border-none md:shadow-none'>
         <div className='flex flex-row items-center justify-between gap-8 md:gap-10 overflow-x-scroll scrollbar-none'>
             {
                 categories.map((item)=>(
