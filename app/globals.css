@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.leaflet-bottom,
+.leaflet-control,
+.leaflet-pane,
+.leaflet-top {
+  z-index: 0 !important;
+}
+
+.rdrMonth{
+  width: 100% important;
+}
+
+.rdrCalendarWrapper{
+  font-size: 14px !important;
+  width: 100% !important;
+}

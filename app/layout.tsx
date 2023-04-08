@@ -4,6 +4,7 @@ import { LoginModal } from './components/modal/LoginModal';
 import { Modals } from './components/modal/Modals';
 import { RegisterModal } from './components/modal/RegisterModal';
 import { RentModal } from './components/modal/RentModal';
+import SearchModal from './components/modal/SearchModal';
 import { Navbar } from './components/navbar/Navbar';
 import ToasterProvider from './components/provider/ToasterProvider';
 import './globals.css'
@@ -30,12 +31,15 @@ export default async function RootLayout({
       <body className={font.className}>
         <ClientOnly>
           <ToasterProvider/>
+          <SearchModal/>
           <RentModal/>
           <LoginModal/>
           <RegisterModal/>
           <Navbar currentUser={currentuser}/>
         </ClientOnly>
+        <div className='pt-40'>
         {children}
+        </div>
       </body>
     </html>
   )
