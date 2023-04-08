@@ -58,7 +58,7 @@ export const RegisterModal = () => {
         </div>
         <div className='flex flex-row justify-center gap-3 items-center'>
             <p className='text-gray-500'>Already have an account</p>
-            <p className='font-bold'>.</p>
+            {/* <p className='font-bold'>.</p> */}
             <p onClick={toggle} className='font-medium underline cursor-pointer'>Log in</p>
         </div>
         </>

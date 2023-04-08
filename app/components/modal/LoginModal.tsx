@@ -68,7 +68,7 @@ export const LoginModal = () => {
         </div>
         <div className='flex flex-row justify-center gap-3 items-center'>
             <p className='text-gray-500'>Don't have an account ?</p>
-            <p className='font-bold'>.</p>
+            {/* <p className='font-bold'>{`.`}</p> */}
             <p onClick={toggle} className='font-medium underline hover:cursor-pointer hover:font-semibold'>Sign in</p>
         </div>
         </>
